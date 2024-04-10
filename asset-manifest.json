@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/PostcardValidator/postcard-validator/static/css/main.aaf7735a.css",
-    "main.js": "/PostcardValidator/postcard-validator/static/js/main.efbc49fa.js",
-    "static/js/453.59cfddca.chunk.js": "/PostcardValidator/postcard-validator/static/js/453.59cfddca.chunk.js",
-    "index.html": "/PostcardValidator/postcard-validator/index.html",
-    "main.aaf7735a.css.map": "/PostcardValidator/postcard-validator/static/css/main.aaf7735a.css.map",
-    "main.efbc49fa.js.map": "/PostcardValidator/postcard-validator/static/js/main.efbc49fa.js.map",
-    "453.59cfddca.chunk.js.map": "/PostcardValidator/postcard-validator/static/js/453.59cfddca.chunk.js.map"
+    "main.css": "/PostcardValidator/static/css/main.aaf7735a.css",
+    "main.js": "/PostcardValidator/static/js/main.257ab893.js",
+    "static/js/453.59cfddca.chunk.js": "/PostcardValidator/static/js/453.59cfddca.chunk.js",
+    "index.html": "/PostcardValidator/index.html",
+    "main.aaf7735a.css.map": "/PostcardValidator/static/css/main.aaf7735a.css.map",
+    "main.257ab893.js.map": "/PostcardValidator/static/js/main.257ab893.js.map",
+    "453.59cfddca.chunk.js.map": "/PostcardValidator/static/js/453.59cfddca.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.aaf7735a.css",
-    "static/js/main.efbc49fa.js"
+    "static/js/main.257ab893.js"
   ]
 }
