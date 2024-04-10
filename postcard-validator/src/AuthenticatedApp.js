@@ -172,7 +172,7 @@ const AuthenticatedApp = () => {
             <input type="text" value={name} onChange={e => setName(e.target.value)} />
             </div>
             <div>
-            <label>Amoount $$:</label>
+            <label>Amount $$:</label>
             <input type="text" value={amount} onChange={e => setAmount(e.target.value)} />
             </div>
             <div>
@@ -183,9 +183,9 @@ const AuthenticatedApp = () => {
             <label>Select Service Type:</label>
             <select className="select" value={serviceType} onChange={e => setServiceType(e.target.value)}>
                 <option value="select">Select an option</option>
-                <option value="inperson">In Person</option>
                 <option value="delivery">Delivery</option>
-                <option value="takeout">Takeout</option>
+                <option value="pickup">Pickup</option>
+                <option value="dineIn">Dine-In</option>
             </select>
             </div>
             <button type="submit" disabled={!isFormValid}>Submit</button>
