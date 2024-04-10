@@ -1,11 +1,10 @@
 // App.js
-import { onAuthStateChanged, signOut } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
-import './App.css';
+import { onAuthStateChanged } from 'firebase/auth';
+import { auth } from './firebase';
 import SignIn from './components/auth/SignIn';
-import SignUp from './components/auth/SignUp';
-
-import { auth } from './firebase'; // Adjust the path as necessary
+import AuthenticatedApp from './AuthenticatedApp';
+import './App.css';
 
 
 function App() {
@@ -19,27 +18,15 @@ function App() {
     return () => unsubscribe();
   }, []);
 
-  const handleSignOut = () => {
-    signOut(auth).catch(error => console.error(error));
-  };
-
   // Authenticated State
   if (authUser) {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <p>Do what you do Jeff</p>
-          <button onClick={handleSignOut}>Log Out</button>
-        </header>
-      </div>
-    );
+    return <AuthenticatedApp />;
   }
 
   // Non-authenticated State
   return (
     <div className="App">
       <SignIn />
-      <SignUp />
     </div>
   );
 }

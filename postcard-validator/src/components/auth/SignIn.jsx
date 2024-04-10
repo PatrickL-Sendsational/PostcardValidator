@@ -6,14 +6,18 @@ import { auth } from "../../firebase";
 const SignIn = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
+
 
     const signIn = (e) => {
         e.preventDefault();
         signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
             console.log(userCredential);
+            setErrorMessage('')
         }).catch((error) => {
             console.log(error);
+            setErrorMessage('Incorrect Login Credentials')
         })
     }
 
@@ -34,6 +38,7 @@ const SignIn = () => {
                     onChange={(e) => setPassword(e.target.value)}
                 ></input>
                 <button type="submit">Log In</button>
+                {errorMessage && <div className="message">{errorMessage}</div>}
             </form>
         </div>
     )
