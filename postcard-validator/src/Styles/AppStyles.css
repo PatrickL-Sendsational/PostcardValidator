@@ -65,7 +65,7 @@ body {
     margin-top: 20px;
     color: #ff0000;
     font-weight: bold;
-    font-size: 10px;
+    font-size: 15px;
   }
 
   .success-message {
@@ -73,7 +73,7 @@ body {
     margin-top: 20px;
     color: green;
     font-weight: bold;
-    font-size: 10px;
+    font-size: 15px;
   }
 
   .logout-container {
@@ -115,7 +115,7 @@ body {
 
   .select {
     width: 100%;
-    padding: 10px;
+    padding: 20px;
     margin-bottom: 10px;
     border: 2px solid #ccc;
     border-radius: 4px;
