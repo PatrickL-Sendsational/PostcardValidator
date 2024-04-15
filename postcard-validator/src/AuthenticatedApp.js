@@ -7,16 +7,16 @@ import './Styles/AppStyles.css';
 const AuthenticatedApp = () => {
   const [code, setCode] = useState('');
   const [name, setName] = useState('');
-  const [amount, setAmount] = useState('');
+  // const [amount, setAmount] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
-  const [serviceType, setServiceType] = useState('select');
+  // const [serviceType, setServiceType] = useState('select');
   const [message, setMessage] = useState('');
   const resetForm = () => {
     setCode('');
     setName('');
-    setAmount('');
+    // setAmount('');
     setPhoneNumber('');
-    setServiceType('select');
+    // setServiceType('select');
     setMessage(''); 
 };
 
@@ -30,9 +30,9 @@ const AuthenticatedApp = () => {
     const payload = {
       phoneNumber: phoneNumber,
       discountCode: code,
-      orderType: serviceType,
+      // orderType: serviceType,
       name: name,
-      amount: amount
+      // amount: amount
     };
 
     // Get the current user
@@ -69,9 +69,9 @@ const AuthenticatedApp = () => {
                 // If the message is exactly "Valid Discount Code", reset the form fields
                 setCode("");
                 setName("");
-                setAmount("");
+                // setAmount("");
                 setPhoneNumber("");
-                setServiceType("select");
+                // setServiceType("select");
             }
           } else {
             console.error('Message container not found.');
@@ -145,41 +145,41 @@ const AuthenticatedApp = () => {
    const isNameValid = name.trim() !== '';
 
    // Check if amount is not empty
-   const isAmountValid = amount.trim() !== '' && !isNaN(amount) && Number(amount) > 0;
+   // const isAmountValid = amount.trim() !== '' && !isNaN(amount) && Number(amount) > 0;
 
 
   // Check if the phoneNumber is 10 digits long and contains only numbers
   const isPhoneNumberValid = /^\d{10}$/.test(phoneNumber);
 
   // Check if the serviceType is not equal to 'select'
-  const isServiceTypeValid = serviceType !== 'select';
+  // const isServiceTypeValid = serviceType !== 'select';
 
   // Enable submit button only if all conditions are met
-  const isFormValid = isCodeValid && isNameValid && isAmountValid && isPhoneNumberValid && isServiceTypeValid;
+  const isFormValid = isCodeValid && isNameValid && isPhoneNumberValid // && isAmountValid  && isServiceTypeValid;
 
 
   return (
     <div className="fullContainer">
         <div className="container">
-        <h1>Postcard Redemption</h1>
+        <h1>Code Redemption</h1>
         <form onSubmit={handleSubmit} id="postcardForm">
             <div>
-            <label>Postcard Code:</label>
+            <label>Code:</label>
             <input type="text" value={code} onChange={e => setCode(e.target.value)} />
             </div>
             <div>
             <label>Name:</label>
             <input type="text" value={name} onChange={e => setName(e.target.value)} />
             </div>
-            <div>
+            {/* <div>
             <label>Amount $$:</label>
             <input type="text" value={amount} onChange={e => setAmount(e.target.value)} />
-            </div>
+            </div> */}
             <div>
             <label>Phone Number:</label>
             <input type="text" value={phoneNumber} onChange={e => setPhoneNumber(e.target.value)} />
             </div>
-            <div>
+            {/* <div>
             <label>Select Service Type:</label>
             <select className="select" value={serviceType} onChange={e => setServiceType(e.target.value)}>
                 <option value="select">Select an option</option>
@@ -187,7 +187,7 @@ const AuthenticatedApp = () => {
                 <option value="pickup">Pickup</option>
                 <option value="dineIn">Dine-In</option>
             </select>
-            </div>
+            </div> */}
             <button type="submit" disabled={!isFormValid}>Submit</button>
         </form>
         <button type="button" onClick={resetForm}>Reset Form</button>
