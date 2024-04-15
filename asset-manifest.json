@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/PostcardValidator/static/css/main.a730c91d.css",
-    "main.js": "/PostcardValidator/static/js/main.caa62547.js",
+    "main.css": "/PostcardValidator/static/css/main.db7dcff0.css",
+    "main.js": "/PostcardValidator/static/js/main.ed70df91.js",
     "static/js/453.59cfddca.chunk.js": "/PostcardValidator/static/js/453.59cfddca.chunk.js",
     "index.html": "/PostcardValidator/index.html",
-    "main.a730c91d.css.map": "/PostcardValidator/static/css/main.a730c91d.css.map",
-    "main.caa62547.js.map": "/PostcardValidator/static/js/main.caa62547.js.map",
+    "main.db7dcff0.css.map": "/PostcardValidator/static/css/main.db7dcff0.css.map",
+    "main.ed70df91.js.map": "/PostcardValidator/static/js/main.ed70df91.js.map",
     "453.59cfddca.chunk.js.map": "/PostcardValidator/static/js/453.59cfddca.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a730c91d.css",
-    "static/js/main.caa62547.js"
+    "static/css/main.db7dcff0.css",
+    "static/js/main.ed70df91.js"
   ]
 }
