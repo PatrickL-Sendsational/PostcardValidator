@@ -6,9 +6,11 @@ import './Styles/AppStyles.css';
 
 const AuthenticatedApp = () => {
   const [code, setCode] = useState('');
+  const [isCodeFieldValid, setIsCodeFieldValid] = useState(false);
   const [name, setName] = useState('');
   // const [amount, setAmount] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
+  const [isPhoneFieldValid, setIsPhoneFieldValid] = useState(false);
   // const [serviceType, setServiceType] = useState('select');
   const [message, setMessage] = useState('');
   const resetForm = () => {
@@ -19,6 +21,33 @@ const AuthenticatedApp = () => {
     // setServiceType('select');
     setMessage(''); 
 };
+
+  // FIELD CHECKERS FOR GREEN BORDER --------------->
+  const handlePhoneNumberChange = (e) => {
+    const inputValue = e.target.value;
+
+    // Check if the input contains only digits
+    const containsOnlyDigits = /^\d+$/.test(inputValue);
+
+    // Check if the input has exactly 10 digits and contains only digits
+    const isValidPhoneNumber = inputValue.length === 10 && containsOnlyDigits;
+
+    setPhoneNumber(inputValue);
+    setIsPhoneFieldValid(isValidPhoneNumber);
+  };
+
+  const handleCodeChange = (e) => {
+    const inputValue = e.target.value;
+
+    // Check if the input contains only digits
+    const containsOnlyDigits = /^\d+$/.test(inputValue);
+
+    // Check if the input has exactly 10 digits and contains only digits
+    const isValidCode = inputValue.length === 7 && containsOnlyDigits;
+
+    setCode(inputValue);
+    setIsCodeFieldValid(isValidCode);
+  };
 
   const handleSignOut = () => {
     signOut(auth).catch(error => console.error(error));
@@ -34,6 +63,8 @@ const AuthenticatedApp = () => {
       name: name,
       // amount: amount
     };
+
+
 
     // Get the current user
     const auth = getAuth();
@@ -88,54 +119,6 @@ const AuthenticatedApp = () => {
       // Here you might want to redirect the user to sign in or show a message
     }
 };
-//   const handleSubmit = async (event) => {
-//     event.preventDefault();
-  
-//     // Assuming this is your payload structure
-//     const payload = {
-//       phoneNumber: phoneNumber,
-//       discountCode: code,
-//       orderType: serviceType,
-//       name: name,
-//       amount: amount
-//     };
-//     try {
-//       const response = await fetch('https://codecheck-cnkvyssrga-uc.a.run.app', {
-//         method: 'POST',
-//         headers: {
-//           'Content-Type': 'application/json',
-//         },
-//         body: JSON.stringify(payload),
-//       });
-  
-//       if (!response.ok) {
-//         throw new Error('Network response was not ok');
-//       }
-  
-//       const data = await response.json();
-//       // Handle success
-//       console.log('Success:', data);
-//       const messageContainer = document.getElementById('message');
-//       if (messageContainer) {
-//         messageContainer.textContent = data.message; // Set the message from the data
-//         setMessage(data.message)
-//         if (data.message === "Valid Discount Code") {
-//             // If the message is exactly "Valid Discount Code", reset the form fields
-//             setCode("");
-//             setName("");
-//             setAmount("");
-//             setPhoneNumber("");
-//             setServiceType("select");
-//         }
-//     } else {
-//         console.error('Message container not found.');
-//     }
-
-//     } catch (error) {
-//       console.error('Error:', error);
-//       // Here you might want to update the state to show an error message
-//     }
-//   };
   
   // Enable submit button only if form is valid
   // Check if the code is 7 digits long and contains only numbers
@@ -165,7 +148,11 @@ const AuthenticatedApp = () => {
         <form onSubmit={handleSubmit} id="postcardForm">
             <div>
             <label>Code:</label>
-            <input type="text" value={code} onChange={e => setCode(e.target.value)} />
+            <input 
+              type="text" 
+              value={code} 
+              onChange={handleCodeChange} 
+              className={isCodeFieldValid ? 'validInput' : ''} />
             </div>
             <div>
             <label>Name:</label>
@@ -177,7 +164,11 @@ const AuthenticatedApp = () => {
             </div> */}
             <div>
             <label>Phone Number:</label>
-            <input type="text" value={phoneNumber} onChange={e => setPhoneNumber(e.target.value)} />
+            <input 
+              type="text" 
+              value={phoneNumber} 
+              onChange={handlePhoneNumberChange} 
+              className={isPhoneFieldValid ? 'validInput' : ''} />
             </div>
             {/* <div>
             <label>Select Service Type:</label>

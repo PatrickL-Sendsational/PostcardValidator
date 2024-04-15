@@ -65,7 +65,7 @@ body {
     margin-top: 20px;
     color: #ff0000;
     font-weight: bold;
-    font-size: 15px;
+    font-size: 25px;
   }
 
   .success-message {
@@ -73,7 +73,7 @@ body {
     margin-top: 20px;
     color: green;
     font-weight: bold;
-    font-size: 15px;
+    font-size: 25px;
   }
 
   .logout-container {
@@ -144,6 +144,10 @@ body {
     display: block;
     overflow-wrap: normal;
     overflow: auto;
+  }
+
+  .validInput {
+    border: 1px solid green;
   }
 
   
