@@ -15,9 +15,11 @@ const AuthenticatedApp = () => {
   const [message, setMessage] = useState('');
   const resetForm = () => {
     setCode('');
+    setIsCodeFieldValid(false)
     setName('');
     // setAmount('');
     setPhoneNumber('');
+    setIsPhoneFieldValid(false)
     // setServiceType('select');
     setMessage(''); 
 };
@@ -99,9 +101,11 @@ const AuthenticatedApp = () => {
             if (data.message === "Valid Discount Code") {
                 // If the message is exactly "Valid Discount Code", reset the form fields
                 setCode("");
+                setIsCodeFieldValid(false)
                 setName("");
                 // setAmount("");
                 setPhoneNumber("");
+                setIsPhoneFieldValid(false)
                 // setServiceType("select");
             }
           } else {
