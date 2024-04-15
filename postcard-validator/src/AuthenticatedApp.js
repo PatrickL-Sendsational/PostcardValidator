@@ -152,7 +152,7 @@ const AuthenticatedApp = () => {
               type="text" 
               value={code} 
               onChange={handleCodeChange} 
-              className={isCodeFieldValid ? 'validInput' : ''} />
+              style={{ border: isCodeFieldValid ? '3px solid rgb(50, 180, 1)' : '' }} />
             </div>
             <div>
             <label>Name:</label>
@@ -168,7 +168,7 @@ const AuthenticatedApp = () => {
               type="text" 
               value={phoneNumber} 
               onChange={handlePhoneNumberChange} 
-              className={isPhoneFieldValid ? 'validInput' : ''} />
+              style={{ border: isPhoneFieldValid ? '3px solid rgb(50, 180, 1)' : '' }} />
             </div>
             {/* <div>
             <label>Select Service Type:</label>

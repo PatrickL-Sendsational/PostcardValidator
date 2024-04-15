@@ -11,10 +11,10 @@ body {
   }
   
   .container {
-    max-width: 800px;
+    max-width: 850px;
     width: 90%;
     background-color: #fff;
-    padding: 20px;
+    padding: 25px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
@@ -147,7 +147,7 @@ body {
   }
 
   .validInput {
-    border: 1px solid green;
+    border: 25px solid rgb(1, 180, 1);
   }
 
   
